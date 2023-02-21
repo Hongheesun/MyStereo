@@ -32,4 +32,4 @@ function DragabbleCategory({ category, index }: IDragabbleCategoryProps) {
   );
 }
 
-export default DragabbleCategory;
+export default React.memo(DragabbleCategory);
