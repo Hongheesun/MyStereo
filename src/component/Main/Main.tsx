@@ -7,7 +7,7 @@ function Main() {
   return (
     <Styled.Container>
       <Styled.Stereo src={Stereo} alt="stereo" />
-      <Menu></Menu>
+      <Menu />
     </Styled.Container>
   );
 }
