@@ -6,12 +6,12 @@ import {
   DropResult,
 } from "react-beautiful-dnd";
 import { useRecoilState } from "recoil";
-import * as Styled from "./Menu.style";
+import * as Styled from "./Category.style";
 import { VideoTape } from "../../assets/images";
 import { ButtonSound } from "../../assets/sounds";
 import { categoriesState } from "../../atoms";
 
-function Menu() {
+function Category() {
   const [play] = useSound(ButtonSound);
   const [categories, setCategories] = useRecoilState(categoriesState);
 
@@ -56,4 +56,4 @@ function Menu() {
   );
 }
 
-export default Menu;
+export default Category;

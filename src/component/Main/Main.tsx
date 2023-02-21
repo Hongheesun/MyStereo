@@ -1,13 +1,13 @@
 import React from "react";
 import * as Styled from "./Main.style";
 import { Stereo } from "../../assets/images";
-import Menu from "../Menu/Menu";
+import Category from "./../Category/Category";
 
 function Main() {
   return (
     <Styled.Container>
       <Styled.Stereo src={Stereo} alt="stereo" />
-      <Menu />
+      <Category />
     </Styled.Container>
   );
 }
