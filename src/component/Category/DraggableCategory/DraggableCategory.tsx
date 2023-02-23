@@ -12,9 +12,8 @@ interface IDragabbleCategoryProps {
 
 function DragabbleCategory({ category, index }: IDragabbleCategoryProps) {
   const [play] = useSound(ButtonSound);
-
   return (
-    <Draggable key={category} draggableId={category} index={index}>
+    <Draggable draggableId={category} index={index}>
       {(magic) => (
         <Styled.VideoTapeWrapper
           onMouseDown={() => {
@@ -32,4 +31,4 @@ function DragabbleCategory({ category, index }: IDragabbleCategoryProps) {
   );
 }
 
-export default DragabbleCategory;
+export default React.memo(DragabbleCategory);
