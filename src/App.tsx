@@ -1,10 +1,14 @@
-import "./App.css";
 import Main from "./component/Main/Main";
-
+import MusicPage from "./component/MusicPage/MusicPage";
+import { useRecoilValue } from "recoil";
+import { videoState } from "./atoms";
 function App() {
+  const playVideo = useRecoilValue(videoState);
+
   return (
     <div className="App">
-      <Main></Main>
+      {!playVideo && <Main />}
+      {playVideo && <MusicPage />}
     </div>
   );
 }
