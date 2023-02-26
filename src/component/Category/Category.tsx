@@ -16,7 +16,7 @@ function Category() {
     play();
     setTimeout(() => {
       setPlayVideo(true);
-    }, 3350);
+    }, 3400);
   };
 
   const onDragEnd = (info: DropResult) => {
