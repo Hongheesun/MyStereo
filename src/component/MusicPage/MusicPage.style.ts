@@ -19,12 +19,13 @@ export const Buttons = styled.div`
   position: absolute;
   top: 40px;
   width: 100%;
+  z-index: 1;
+  cursor: pointer;
 `;
 
 export const ButtonWrapper = styled.div`
   position: absolute;
   left: 48px;
-  cursor: pointer;
 `;
 
 export const VideoButton = styled.img`
@@ -45,8 +46,14 @@ export const BackButton = styled.button`
   position: absolute;
   right: 48px;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid #fff;
   background-color: transparent;
   font-size: 16px;
   font-weight: 800;
+  color: #fff;
+  cursor: pointer;
+`;
+
+export const NoVideo = styled.div`
+  margin-top: 200px;
 `;
