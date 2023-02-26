@@ -12,7 +12,7 @@ import {
   CityRain,
   Moon,
 } from "../../assets/videos";
-import { VideoTape_Transparent, Note } from "../../assets/images";
+import { Video_White, Note } from "../../assets/images";
 import { RainSound } from "../../assets/sounds";
 import Lottie from "react-lottie";
 import { Player } from "@lottiefiles/react-lottie-player";
@@ -74,7 +74,7 @@ function MusicPage() {
     <Styled.Container>
       <Styled.Buttons>
         <Styled.ButtonWrapper onClick={stopMusic}>
-          <Styled.VideoButton src={VideoTape_Transparent} />
+          <Styled.VideoButton src={Video_White} />
           <Styled.Text>{categories.play[0]}</Styled.Text>
         </Styled.ButtonWrapper>
         <Styled.BackButton onClick={noShowVideo}>

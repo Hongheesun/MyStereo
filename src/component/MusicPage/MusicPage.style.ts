@@ -40,6 +40,7 @@ export const Text = styled.span`
   right: 25%;
   font-size: 16px;
   font-weight: 800;
+  color: #fff;
 `;
 
 export const BackButton = styled.button`
