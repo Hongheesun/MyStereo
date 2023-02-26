@@ -6,7 +6,9 @@ import Category from "./../Category/Category";
 function Main() {
   return (
     <Styled.Container>
-      <Styled.Stereo src={Stereo} alt="stereo" />
+      <Styled.Wrapper>
+        <Styled.Stereo src={Stereo} alt="stereo" />
+      </Styled.Wrapper>
       <Category />
     </Styled.Container>
   );
