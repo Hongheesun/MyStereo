@@ -40,14 +40,11 @@ function MusicPage() {
     stop();
   };
 
-  const defaultOptions = {
-    //예제1
+  // 로티 옵션
+  const noteLottieOptions = {
     loop: true,
     autoplay: true,
     animationData: Note,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
   };
 
   const startVideoContent = (content: string) => {
@@ -91,10 +88,10 @@ function MusicPage() {
       ) : (
         <Styled.NoVideo>
           <Lottie
-            options={defaultOptions}
+            options={noteLottieOptions}
             height={600}
             width={600}
-            isClickToPauseDisabled={true}
+            isClickToPauseDisabled={false}
           />
         </Styled.NoVideo>
       )}
