@@ -15,10 +15,8 @@ import {
 import { Video_White, Note } from "../../assets/images";
 import { RainSound } from "../../assets/sounds";
 import Lottie from "react-lottie";
-import { Player } from "@lottiefiles/react-lottie-player";
 
 function MusicPage() {
-  // const playerRef = useRef(Player);
   const [play, { stop }] = useSound(RainSound);
   const [playVideo, setPlayVideo] = useRecoilState(videoState);
   const [categories, setCategories] = useRecoilState(categoriesState);
@@ -26,7 +24,6 @@ function MusicPage() {
     nowPlayContentState
   );
   const [showVideo, setShowVideo] = useState<boolean>(true);
-  //console.log(nowPlayContent);
 
   const backMainPage = () => {
     setPlayVideo(false);
