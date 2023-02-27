@@ -31,17 +31,17 @@ export const VideoButtonWrapper = styled.div`
 `;
 
 export const VideoButton = styled.img`
-  width: 92px;
-  height: 58px;
+  width: 90px;
+  height: 55px;
 `;
 
 export const Text = styled.span`
   position: relative;
-  bottom: 30px;
+  bottom: 26px;
   right: 50%;
   text-align: center;
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 700;
   color: #fff;
 `;
 

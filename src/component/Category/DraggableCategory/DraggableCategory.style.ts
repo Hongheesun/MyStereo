@@ -10,14 +10,15 @@ export const VideoTapeWrapper = styled.div<IContainerProps>`
 `;
 
 export const VideoTape = styled.img`
-  width: 103px;
-  height: 57px;
+  width: 90px;
+  height: 55px;
 `;
 
 export const MenuText = styled.div<IContainerProps>`
   position: relative;
-  top: ${(props) => (props.boardId === "categories" ? "40%" : "33px")};
+  top: ${(props) => (props.boardId === "categories" ? "42%" : "30px")};
   text-align: center;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 700;
 `;

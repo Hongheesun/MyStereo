@@ -5,6 +5,11 @@ export const Container = styled.div`
   width: 100%;
   margin-top: 240px;
   overflow-y: hidden;
+
+  /* iPad in portrait & landscape */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    margin-top: 13%;
+  }
 `;
 export const Stereo = styled.img`
   width: 654px;
