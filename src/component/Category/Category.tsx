@@ -1,16 +1,15 @@
-import { useState, useEffect } from "react";
 import useSound from "use-sound";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
-import { useRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import * as Styled from "./Category.style";
-import { categoriesState, videoState, nowPlayContentState } from "../../atoms";
+import { categoriesState, videoState } from "../../atoms";
 import Board from "./Board";
 import { TapeSound2 } from "../../assets/sounds";
 
 function Category() {
   const [play] = useSound(TapeSound2);
   const [categories, setCategories] = useRecoilState(categoriesState);
-  const [playVideo, setPlayVideo] = useRecoilState(videoState);
+  const setPlayVideo = useSetRecoilState(videoState);
 
   const startVideo = () => {
     play();
