@@ -9,25 +9,27 @@ interface IBoardProps {
 
 function Board({ categories, boardId }: IBoardProps) {
   return (
-    <Droppable droppableId={boardId} direction="horizontal">
-      {(magic, info) => (
-        <Styled.Container
-          ref={magic.innerRef}
-          {...magic.droppableProps}
-          boardId={boardId}
-        >
-          {categories.map((category, index) => (
-            <DragabbleCategory
-              key={category}
-              category={category}
-              index={index}
-              boardId={boardId}
-            />
-          ))}
-          {magic.placeholder}
-        </Styled.Container>
-      )}
-    </Droppable>
+    <Styled.BoardWrapper boardId={boardId}>
+      <Droppable droppableId={boardId} direction="horizontal">
+        {(magic) => (
+          <Styled.Container
+            ref={magic.innerRef}
+            {...magic.droppableProps}
+            boardId={boardId}
+          >
+            {categories.map((category, index) => (
+              <DragabbleCategory
+                key={category}
+                category={category}
+                index={index}
+                boardId={boardId}
+              />
+            ))}
+            {magic.placeholder}
+          </Styled.Container>
+        )}
+      </Droppable>
+    </Styled.BoardWrapper>
   );
 }
 

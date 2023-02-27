@@ -15,10 +15,8 @@ export const VideoTape = styled.img`
 `;
 
 export const MenuText = styled.div<IContainerProps>`
-  position: ${(props) =>
-    props.boardId === "categories" ? "relative" : "absolute"};
-  top: ${(props) => (props.boardId === "categories" ? "40%" : "25%")};
-  left: ${(props) => props.boardId === "play" && "25%"};
+  position: relative;
+  top: ${(props) => (props.boardId === "categories" ? "40%" : "33px")};
   text-align: center;
   color: #fff;
   font-size: 18px;
