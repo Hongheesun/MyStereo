@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MyStereo/static/css/main.e6c13ad2.css",
-    "main.js": "/MyStereo/static/js/main.8a9f733f.js",
+    "main.js": "/MyStereo/static/js/main.354f8bf8.js",
     "static/js/845.fe9a8f23.chunk.js": "/MyStereo/static/js/845.fe9a8f23.chunk.js",
     "static/media/fire.mp4": "/MyStereo/static/media/fire.3c81c8b6904103f2ffe4.mp4",
     "static/media/cityNight.mp4": "/MyStereo/static/media/cityNight.1e7b2acb7f6ab443cbf2.mp4",
@@ -22,11 +22,11 @@
     "static/media/button.mp3": "/MyStereo/static/media/button.0cf724e5d241f2111118.mp3",
     "index.html": "/MyStereo/index.html",
     "main.e6c13ad2.css.map": "/MyStereo/static/css/main.e6c13ad2.css.map",
-    "main.8a9f733f.js.map": "/MyStereo/static/js/main.8a9f733f.js.map",
+    "main.354f8bf8.js.map": "/MyStereo/static/js/main.354f8bf8.js.map",
     "845.fe9a8f23.chunk.js.map": "/MyStereo/static/js/845.fe9a8f23.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.8a9f733f.js"
+    "static/js/main.354f8bf8.js"
   ]
 }
