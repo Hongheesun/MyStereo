@@ -34,10 +34,10 @@ export const VideoButton = styled.img`
 `;
 
 export const Text = styled.span`
-  position: absolute;
-  top: 25%;
-  left: 30%;
-  right: 25%;
+  position: relative;
+  bottom: 30px;
+  right: 50%;
+  text-align: center;
   font-size: 16px;
   font-weight: 800;
   color: #fff;
