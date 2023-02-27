@@ -23,7 +23,9 @@ export const Buttons = styled.div`
   cursor: pointer;
 `;
 
-export const ButtonWrapper = styled.div`
+export const LeftWrapper = styled.div``;
+
+export const VideoButtonWrapper = styled.div`
   position: absolute;
   left: 48px;
 `;
@@ -67,4 +69,105 @@ export const HomeButton = styled.img`
   width: 30px;
   z-index: 1;
   cursor: pointer;
+`;
+
+export const ArrowLottie = styled.div`
+  position: absolute;
+  top: 60px;
+  left: 80px;
+`;
+
+export const VolumeControl = styled.div`
+  position: absolute;
+  top: 60px;
+  left: 47px;
+
+  input[type="range"] {
+    height: 1px;
+    -webkit-appearance: none;
+    width: 90px;
+  }
+  input[type="range"]:focus {
+    outline: none;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #ffffff;
+    border-radius: 7px;
+    border: 0px solid #000000;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 0px solid #000000;
+    height: 10px;
+    width: 10px;
+    border-radius: 14px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -4px;
+  }
+  input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: #ffffff;
+  }
+  input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #ffffff;
+    border-radius: 7px;
+    border: 0px solid #000000;
+  }
+  input[type="range"]::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 0px solid #000000;
+    height: 12px;
+    width: 12px;
+    border-radius: 14px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  input[type="range"]::-ms-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  input[type="range"]::-ms-fill-lower {
+    background: #ffffff;
+    border: 0px solid #000000;
+    border-radius: 14px;
+    box-shadow: 0px 0px 0px #000000;
+  }
+  input[type="range"]::-ms-fill-upper {
+    background: #ffffff;
+    border: 0px solid #000000;
+    border-radius: 14px;
+    box-shadow: 0px 0px 0px #000000;
+  }
+  input[type="range"]::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 0px 0px 0px #000000;
+    border: 0px solid #000000;
+    height: 12px;
+    width: 12px;
+    border-radius: 14px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  input[type="range"]:focus::-ms-fill-lower {
+    background: #ffffff;
+  }
+  input[type="range"]:focus::-ms-fill-upper {
+    background: #ffffff;
+  }
 `;

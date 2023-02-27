@@ -13,9 +13,11 @@ function MusicPage() {
   const [showVideo, setShowVideo] = useState<boolean>(true);
   const [showAudioButton, setShowAudioButton] = useState<boolean>(false);
   const [showStopButton, setShowStopButton] = useState<boolean>(false);
+  const [volume, setVolume] = useState<number>(1);
   const [play, { stop }] = useSound(startAudioContent(categories.play[0]), {
     interrupt: true,
     loop: true,
+    volume: volume,
   });
   const reset = useResetRecoilState(categoriesState);
 
@@ -39,6 +41,10 @@ function MusicPage() {
     setShowStopButton(false);
   };
 
+  const changeVolume = (e: any) => {
+    setVolume(e.target.value);
+  };
+
   // 로티 옵션
   const noteLottieOptions = {
     loop: true,
@@ -55,28 +61,49 @@ function MusicPage() {
   return (
     <Styled.Container>
       <Styled.Buttons>
-        <Styled.ButtonWrapper
-          onMouseOver={() => {
-            setShowAudioButton(true);
-          }}
-          onMouseOut={() => {
-            setShowAudioButton(false);
-          }}
-        >
-          <Styled.VideoButton src={Video_White} />
-          {showAudioButton ? (
-            !showStopButton ? (
-              <Styled.Text onClick={startMusic}>▶</Styled.Text>
+        <Styled.LeftWrapper>
+          <Styled.VideoButtonWrapper
+            onMouseOver={() => {
+              setShowAudioButton(true);
+            }}
+            onMouseOut={() => {
+              setShowAudioButton(false);
+            }}
+          >
+            <Styled.VideoButton src={Video_White} />
+            {showAudioButton ? (
+              !showStopButton ? (
+                <Styled.Text onClick={startMusic}>▶</Styled.Text>
+              ) : (
+                <Styled.Text onClick={stopMusic}>■</Styled.Text>
+              )
             ) : (
-              <Styled.Text onClick={stopMusic}>■</Styled.Text>
-            )
+              <Styled.Text>{categories.play[0]}</Styled.Text>
+            )}
+          </Styled.VideoButtonWrapper>
+
+          {!showStopButton ? (
+            <Styled.ArrowLottie>
+              <Lottie
+                options={arrowLottieOptions}
+                height={50}
+                width={50}
+                isClickToPauseDisabled={true}
+              />
+            </Styled.ArrowLottie>
           ) : (
-            <Styled.Text>{categories.play[0]}</Styled.Text>
+            <Styled.VolumeControl>
+              <input
+                type="range"
+                step={0.2}
+                min={0}
+                max={1}
+                onChange={changeVolume}
+              />
+            </Styled.VolumeControl>
           )}
-          {!showStopButton && (
-            <Lottie options={arrowLottieOptions} height={50} width={50} />
-          )}
-        </Styled.ButtonWrapper>
+        </Styled.LeftWrapper>
+
         <Styled.BackButton onClick={noShowVideo}>
           {showVideo ? "No Video" : "Show Video"}
         </Styled.BackButton>
