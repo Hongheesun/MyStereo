@@ -8,6 +8,7 @@ import { Video_White, Note, Home } from "../../assets/images";
 import { startAudioContent, startVideoContent } from "../../functions";
 
 function MusicPage() {
+  const playVideo = useRecoilValue(videoState);
   const setPlayVideo = useSetRecoilState(videoState);
   const categories = useRecoilValue(categoriesState);
   const [showVideo, setShowVideo] = useState<boolean>(true);
@@ -15,7 +16,10 @@ function MusicPage() {
   const [showStopButton, setShowStopButton] = useState<boolean>(false);
   const [play, { stop }] = useSound(startAudioContent(categories.play[0]), {
     interrupt: true,
-    duration: 200,
+    onend: () => {
+      console.info("Sound ended!");
+      play();
+    },
   });
   const reset = useResetRecoilState(categoriesState);
 
