@@ -14,7 +14,7 @@ function Category() {
   const startVideo = () => {
     play();
     setTimeout(() => {
-      // setPlayVideo(true);
+      setPlayVideo(true);
     }, 3400);
   };
 
