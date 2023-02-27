@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useSound from "use-sound";
 import { useSetRecoilState, useResetRecoilState, useRecoilValue } from "recoil";
 import Lottie from "react-lottie";
@@ -15,9 +15,7 @@ function MusicPage() {
   const [showStopButton, setShowStopButton] = useState<boolean>(false);
   const [play, { stop }] = useSound(startAudioContent(categories.play[0]), {
     interrupt: true,
-    onend: () => {
-      play();
-    },
+    loop: true,
   });
   const reset = useResetRecoilState(categoriesState);
 
