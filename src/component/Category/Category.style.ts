@@ -8,7 +8,6 @@ export const BoardWrapper = styled.div<IContainerProps>`
   position: ${(props) => props.boardId === "play" && "absolute"};
   top: 235px;
   width: 100%;
-  height: 500px;
 `;
 
 export const Container = styled.div<IContainerProps>`
