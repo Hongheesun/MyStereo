@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import useSound from "use-sound";
 import { useSetRecoilState, useResetRecoilState, useRecoilValue } from "recoil";
 import Lottie from "react-lottie";
 import { videoState, categoriesState } from "../../atoms";
 import * as Styled from "./MusicPage.style";
-import { Video_White, Note, Home } from "../../assets/images";
+import { Video_White, Note, Home, Arrow } from "../../assets/images";
 import { startAudioContent, startVideoContent } from "../../functions";
 
 function MusicPage() {
-  const playVideo = useRecoilValue(videoState);
   const setPlayVideo = useSetRecoilState(videoState);
   const categories = useRecoilValue(categoriesState);
   const [showVideo, setShowVideo] = useState<boolean>(true);
@@ -17,7 +16,6 @@ function MusicPage() {
   const [play, { stop }] = useSound(startAudioContent(categories.play[0]), {
     interrupt: true,
     onend: () => {
-      console.info("Sound ended!");
       play();
     },
   });
@@ -50,6 +48,12 @@ function MusicPage() {
     animationData: Note,
   };
 
+  const arrowLottieOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: Arrow,
+  };
+
   return (
     <Styled.Container>
       <Styled.Buttons>
@@ -70,6 +74,9 @@ function MusicPage() {
             )
           ) : (
             <Styled.Text>{categories.play[0]}</Styled.Text>
+          )}
+          {!showStopButton && (
+            <Lottie options={arrowLottieOptions} height={50} width={50} />
           )}
         </Styled.ButtonWrapper>
         <Styled.BackButton onClick={noShowVideo}>
