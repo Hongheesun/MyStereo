@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useSound from "use-sound";
-import { useRecoilState, useResetRecoilState } from "recoil";
+import { useSetRecoilState, useResetRecoilState, useRecoilValue } from "recoil";
 import Lottie from "react-lottie";
 import { videoState, categoriesState } from "../../atoms";
 import * as Styled from "./MusicPage.style";
@@ -8,8 +8,8 @@ import { Video_White, Note, Home } from "../../assets/images";
 import { startAudioContent, startVideoContent } from "../../functions";
 
 function MusicPage() {
-  const [playVideo, setPlayVideo] = useRecoilState(videoState);
-  const [categories, setCategories] = useRecoilState(categoriesState);
+  const setPlayVideo = useSetRecoilState(videoState);
+  const categories = useRecoilValue(categoriesState);
   const [showVideo, setShowVideo] = useState<boolean>(true);
   const [showAudioButton, setShowAudioButton] = useState<boolean>(false);
   const [showStopButton, setShowStopButton] = useState<boolean>(false);
