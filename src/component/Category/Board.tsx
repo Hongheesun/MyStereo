@@ -21,6 +21,7 @@ function Board({ categories, boardId }: IBoardProps) {
               key={category}
               category={category}
               index={index}
+              boardId={boardId}
             />
           ))}
           {magic.placeholder}

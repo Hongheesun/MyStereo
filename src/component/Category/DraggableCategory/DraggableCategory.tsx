@@ -8,9 +8,14 @@ import { VideoTape } from "../../../assets/images";
 interface IDragabbleCategoryProps {
   category: string;
   index: number;
+  boardId: string;
 }
 
-function DragabbleCategory({ category, index }: IDragabbleCategoryProps) {
+function DragabbleCategory({
+  category,
+  index,
+  boardId,
+}: IDragabbleCategoryProps) {
   const [play] = useSound(ButtonSound);
   return (
     <Draggable draggableId={category} index={index}>
@@ -23,7 +28,7 @@ function DragabbleCategory({ category, index }: IDragabbleCategoryProps) {
           {...magic.dragHandleProps}
           {...magic.draggableProps}
         >
-          <Styled.MenuText>{category}</Styled.MenuText>
+          <Styled.MenuText boardId={boardId}>{category}</Styled.MenuText>
           <Styled.VideoTape src={VideoTape} alt="vdeoTape" />
         </Styled.VideoTapeWrapper>
       )}

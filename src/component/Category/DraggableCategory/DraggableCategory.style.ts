@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface IContainerProps {
+  boardId: string;
+}
+
 export const VideoTapeWrapper = styled.div`
   position: relative;
   margin: 20px 35px;
@@ -10,11 +14,12 @@ export const VideoTape = styled.img`
   height: 57px;
 `;
 
-export const MenuText = styled.div`
-  position: absolute;
-  top: 25%;
-  left: 28%;
-  right: 25%;
+export const MenuText = styled.div<IContainerProps>`
+  position: ${(props) =>
+    props.boardId === "categories" ? "relative" : "absolute"};
+  top: ${(props) => (props.boardId === "categories" ? "40%" : "25%")};
+  left: ${(props) => props.boardId === "play" && "25%"};
+  text-align: center;
   color: #fff;
   font-size: 18px;
 `;
