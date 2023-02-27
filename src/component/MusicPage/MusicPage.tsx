@@ -1,32 +1,42 @@
 import React, { useEffect, useState } from "react";
 import useSound from "use-sound";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useResetRecoilState } from "recoil";
 import Lottie from "react-lottie";
-import { videoState, nowPlayContentState, categoriesState } from "../../atoms";
+import { videoState, categoriesState } from "../../atoms";
 import * as Styled from "./MusicPage.style";
-import { Video_White, Note } from "../../assets/images";
+import { Video_White, Note, Home } from "../../assets/images";
 import { startAudioContent, startVideoContent } from "../../functions";
 
 function MusicPage() {
   const [playVideo, setPlayVideo] = useRecoilState(videoState);
   const [categories, setCategories] = useRecoilState(categoriesState);
-  const [nowPlayContent, setNowPlayContent] = useRecoilState(
-    nowPlayContentState
-  );
   const [showVideo, setShowVideo] = useState<boolean>(true);
-  const [play, { stop }] = useSound(startAudioContent(categories.play[0]));
+  const [showAudioButton, setShowAudioButton] = useState<boolean>(false);
+  const [showStopButton, setShowStopButton] = useState<boolean>(false);
+  const [play, { stop }] = useSound(startAudioContent(categories.play[0]), {
+    interrupt: true,
+    duration: 200,
+  });
+  const reset = useResetRecoilState(categoriesState);
 
-  // console.log(RainSound);
   const backMainPage = () => {
     setPlayVideo(false);
+    reset();
+    stop();
   };
 
   const noShowVideo = () => {
     setShowVideo(!showVideo);
   };
 
+  const startMusic = () => {
+    play();
+    setShowStopButton(true);
+  };
+
   const stopMusic = () => {
     stop();
+    setShowStopButton(false);
   };
 
   // 로티 옵션
@@ -36,25 +46,33 @@ function MusicPage() {
     animationData: Note,
   };
 
-  useEffect(() => {
-    setNowPlayContent(categories?.play[0]);
-  }, []);
-
   return (
     <Styled.Container>
       <Styled.Buttons>
         <Styled.ButtonWrapper
-          onClick={() => {
-            play();
+          onMouseOver={() => {
+            setShowAudioButton(true);
+          }}
+          onMouseOut={() => {
+            setShowAudioButton(false);
           }}
         >
           <Styled.VideoButton src={Video_White} />
-          <Styled.Text>{categories.play[0]}</Styled.Text>
+          {showAudioButton ? (
+            !showStopButton ? (
+              <Styled.Text onClick={startMusic}>▶</Styled.Text>
+            ) : (
+              <Styled.Text onClick={stopMusic}>■</Styled.Text>
+            )
+          ) : (
+            <Styled.Text>{categories.play[0]}</Styled.Text>
+          )}
         </Styled.ButtonWrapper>
         <Styled.BackButton onClick={noShowVideo}>
           {showVideo ? "No Video" : "Show Video"}
         </Styled.BackButton>
       </Styled.Buttons>
+      <Styled.HomeButton src={Home} onClick={backMainPage} />
       {showVideo ? (
         <Styled.Video muted loop autoPlay>
           <source

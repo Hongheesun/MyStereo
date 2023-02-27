@@ -58,3 +58,12 @@ export const BackButton = styled.button`
 export const NoVideo = styled.div`
   margin-top: 200px;
 `;
+
+export const HomeButton = styled.img`
+  position: absolute;
+  bottom: 30px;
+  left: 48px;
+  width: 35px;
+  z-index: 1;
+  cursor: pointer;
+`;
