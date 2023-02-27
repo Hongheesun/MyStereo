@@ -10,7 +10,7 @@ export const VideoTapeWrapper = styled.div<IContainerProps>`
 `;
 
 export const VideoTape = styled.img`
-  width: 100px;
+  width: 103px;
   height: 57px;
 `;
 

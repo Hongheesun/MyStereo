@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useSound from "use-sound";
 import { useSetRecoilState, useResetRecoilState, useRecoilValue } from "recoil";
 import Lottie from "react-lottie";

@@ -6,7 +6,7 @@ interface IContainerProps {
 
 export const BoardWrapper = styled.div<IContainerProps>`
   position: ${(props) => props.boardId === "play" && "absolute"};
-  top: 235px;
+  top: 228px;
   width: 100%;
 `;
 
