@@ -1,17 +1,16 @@
+import { Fire, Cafe, Cafe2, CityLight, CityRain, Sunny } from "./assets/videos";
 import {
-  Rain,
-  Fire,
-  Cafe,
-  Cafe2,
-  CityLight,
-  CityRain,
-  Moon,
-} from "./assets/videos";
-import { RainSound, FireSound, LofiSound, PianoSound } from "./assets/sounds";
+  RainSound,
+  FireSound,
+  LofiSound,
+  PianoSound,
+  PianoSound2,
+  JazzSound,
+} from "./assets/sounds";
 
 export const startAudioContent = (content: string) => {
   if (content === "Jazz") {
-    return PianoSound;
+    return JazzSound;
   } else if (content === "Piano") {
     return PianoSound;
   } else if (content === "Fire") {
@@ -21,7 +20,7 @@ export const startAudioContent = (content: string) => {
   } else if (content === "Lo-Fi") {
     return LofiSound;
   } else if (content === "Classic") {
-    return PianoSound;
+    return PianoSound2;
   }
 };
 
@@ -33,10 +32,10 @@ export const startVideoContent = (content: string) => {
   } else if (content === "Fire") {
     return Fire;
   } else if (content === "Rain") {
-    return Rain;
-  } else if (content === "Lo-Fi") {
     return CityRain;
+  } else if (content === "Lo-Fi") {
+    return Sunny;
   } else if (content === "Classic") {
-    return Cafe;
+    return Cafe2;
   }
 };
