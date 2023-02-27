@@ -27,6 +27,7 @@ function DragabbleCategory({
           ref={magic.innerRef}
           {...magic.dragHandleProps}
           {...magic.draggableProps}
+          boardId={boardId}
         >
           <Styled.MenuText boardId={boardId}>{category}</Styled.MenuText>
           <Styled.VideoTape src={VideoTape} alt="vdeoTape" />

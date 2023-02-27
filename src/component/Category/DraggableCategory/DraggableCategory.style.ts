@@ -4,9 +4,9 @@ interface IContainerProps {
   boardId: string;
 }
 
-export const VideoTapeWrapper = styled.div`
+export const VideoTapeWrapper = styled.div<IContainerProps>`
   position: relative;
-  margin: 20px 35px;
+  margin: ${(props) => props.boardId === "categories" && "20px 30px"};
 `;
 
 export const VideoTape = styled.img`

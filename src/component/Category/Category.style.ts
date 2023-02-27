@@ -7,8 +7,8 @@ interface IContainerProps {
 export const Container = styled.div<IContainerProps>`
   position: ${(props) =>
     props.boardId === "categories" ? "relative" : "absolute"};
-  top: ${(props) => props.boardId === "play" && "130px"};
-  right: ${(props) => props.boardId === "play" && "43.5%"};
+  top: ${(props) => props.boardId === "play" && "140px"};
+  right: ${(props) => props.boardId === "play" && "44.7%"};
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
