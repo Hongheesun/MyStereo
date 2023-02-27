@@ -4,7 +4,7 @@ import {
   FireSound,
   LofiSound,
   PianoSound,
-  PianoSound2,
+  ClassicSound,
   JazzSound,
 } from "./assets/sounds";
 
@@ -20,7 +20,7 @@ export const startAudioContent = (content: string) => {
   } else if (content === "Lo-Fi") {
     return LofiSound;
   } else if (content === "Classic") {
-    return PianoSound2;
+    return ClassicSound;
   }
 };
 
