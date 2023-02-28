@@ -21,3 +21,7 @@ https://hongheesun.github.io/MyStereo/
 - Lottie
 - Figma
 ```
+
+<br /><br />
+<hr>
+<b>I recommend viewing this project on the web or on a pad. ⭐️</b>
