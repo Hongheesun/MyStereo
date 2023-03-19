@@ -41,8 +41,8 @@ function MusicPage() {
     setShowStopButton(false);
   };
 
-  const changeVolume = (e: any) => {
-    setVolume(e.target.value);
+  const changeVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setVolume(Number(e.target.value));
   };
 
   // 로티 옵션
