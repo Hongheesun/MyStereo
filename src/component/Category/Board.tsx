@@ -11,10 +11,10 @@ function Board({ categories, boardId }: IBoardProps) {
   return (
     <Styled.BoardWrapper boardId={boardId}>
       <Droppable droppableId={boardId} direction="horizontal">
-        {(magic) => (
+        {(provided) => (
           <Styled.Container
-            ref={magic.innerRef}
-            {...magic.droppableProps}
+            ref={provided.innerRef}
+            {...provided.droppableProps}
             boardId={boardId}
           >
             {categories.map((category, index) => (
@@ -25,7 +25,7 @@ function Board({ categories, boardId }: IBoardProps) {
                 boardId={boardId}
               />
             ))}
-            {magic.placeholder}
+            {provided.placeholder}
           </Styled.Container>
         )}
       </Droppable>

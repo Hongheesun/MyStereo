@@ -16,17 +16,18 @@ function DragabbleCategory({
   index,
   boardId,
 }: IDragabbleCategoryProps) {
+  console.log(category);
   const [play] = useSound(ButtonSound);
   return (
     <Draggable draggableId={category} index={index}>
-      {(magic) => (
+      {(provided) => (
         <Styled.VideoTapeWrapper
           onMouseDown={() => {
             play();
           }}
-          ref={magic.innerRef}
-          {...magic.dragHandleProps}
-          {...magic.draggableProps}
+          ref={provided.innerRef}
+          {...provided.dragHandleProps}
+          {...provided.draggableProps}
           boardId={boardId}
         >
           <Styled.MenuText boardId={boardId}>{category}</Styled.MenuText>
