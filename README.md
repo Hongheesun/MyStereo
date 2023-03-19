@@ -4,7 +4,7 @@
   <img src="https://user-images.githubusercontent.com/91399033/221754945-2e9bcc52-608e-45bd-9020-5e81ec2f0551.png" alt="Logo" >
 </div>
 
-#### My Own ASMR Plyer
+#### My Own ASMR Player
 
 <br /><br />
 ## Link ♪
